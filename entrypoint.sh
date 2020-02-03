@@ -12,8 +12,9 @@ if ${INPUT_MODIFIED:-false}; then
   flags+=("--modified")
 fi
 
-objects="$(changed-objects ${flags[@]})"
+objects=( $(changed-objects "${flags[@]}") )
 
-echo "[INFO] get change objects: ${objects}"
 
-echo "::set-output name=changed::${objects}"
+echo "[INFO] get change objects: ${objects[@]}"
+
+echo "::set-output name=changed::${objects[@]}"
