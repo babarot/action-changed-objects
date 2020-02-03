@@ -5,6 +5,8 @@ action-changed-objects
 
 Get changed objects compared with Git commit in `origin/master`
 
+![](demo.png)
+
 This action depends on https://github.com/b4b4r07/changed-objects
 
 ## Usage
