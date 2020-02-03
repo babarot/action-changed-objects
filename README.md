@@ -1,6 +1,8 @@
 action-changed-objects
 ======================
 
+[![](https://github.com/b4b4r07/action-changed-objects/workflows/release/badge.svg)](https://github.com/b4b4r07/action-changed-objects/releases)
+
 Get changed objects compared with Git commit in `origin/master`
 
 ## Usage
