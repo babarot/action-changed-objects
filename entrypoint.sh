@@ -12,7 +12,7 @@ if ${INPUT_MODIFIED:-false}; then
   flags+=("--modified")
 fi
 
-objects="$(get-changed-objects ${flags[@]})"
+objects="$(changed-objects ${flags[@]})"
 
 echo "[INFO] get change objects: ${objects}"
 

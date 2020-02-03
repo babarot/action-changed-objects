@@ -2,19 +2,19 @@ name: 'changed-objects'
 description: 'Get changed objects'
 inputs:
   added:
-    description: 'Get added objects'
+    description: 'Show added objects'
     required: false
-    default: 'true'
+    default: 'false'
   deleted:
-    description: 'Get deleted objects'
+    description: 'Show deleted objects'
     required: false
     default: 'false'
   modified:
-    description: 'Get modified objects'
+    description: 'Show modified objects'
     required: false
-    default: 'true'
+    default: 'false'
 outputs:
-  objects:
+  changed:
     description: 'Changed objects'
 runs:
   using: 'docker'
