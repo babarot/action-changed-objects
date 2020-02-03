@@ -5,6 +5,8 @@ action-changed-objects
 
 Get changed objects compared with Git commit in `origin/master`
 
+This action depends on https://github.com/b4b4r07/changed-objects
+
 ## Usage
 
 A whole example is here:
@@ -48,6 +50,7 @@ The following are optional as `step.with` keys
 | `added`    | Boolean | Filter added objects    | false   |
 | `deleted`  | Boolean | Filter deleted objects  | false   |
 | `modified` | Boolean | Filter modified objects | false   |
+| `dirname`  | Boolean | Return the result with each directory name | false   |
 
 ### outputs
 
@@ -63,7 +66,7 @@ The following are as `step.env` keys
 
 | Name | Description |
 | ---- | ----------- |
-| n/a  | n/a         |
+| `CLI_LOG`  | Log with each level (`TRACE`, `DEBUG`, `INFO`, `WARN` and `ERROR`) |
 
 ## License
 
