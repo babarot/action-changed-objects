@@ -1,19 +1,18 @@
 #!/bin/bash
 
 if ${INPUT_ADDED:-false}; then
-  flags+=("--added")
+  flags+=("--filter=added")
 fi
 
 if ${INPUT_DELETED:-false}; then
-  flags+=("--deleted")
+  flags+=("--filter=deleted")
 fi
 
 if ${INPUT_MODIFIED:-false}; then
-  flags+=("--modified")
+  flags+=("--filter=modified")
 fi
 
 objects=( $(changed-objects "${flags[@]}") )
-
 
 echo "[INFO] get change objects: ${objects[@]}"
 
