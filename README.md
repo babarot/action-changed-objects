@@ -35,6 +35,8 @@ jobs:
         added: 'true'
         deleted: 'false'
         modified: 'true'
+      env:
+        CLI_LOG: 'trace'
       id: objects
     - name: Show the previous result
       run: |
@@ -69,6 +71,12 @@ The following are as `step.env` keys
 | Name | Description |
 | ---- | ----------- |
 | `CLI_LOG`  | Log with each level (`TRACE`, `DEBUG`, `INFO`, `WARN` and `ERROR`) |
+
+## Versus
+
+- [lots0logs/gh-action-get-changed-files](https://github.com/lots0logs/gh-action-get-changed-files)
+- [futuratrepadeira/changed-files](https://github.com/futuratrepadeira/changed-files)
+- [nholden/modified-file-filter-action](https://github.com/nholden/modified-file-filter-action)
 
 ## License
 
