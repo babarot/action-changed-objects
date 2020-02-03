@@ -14,4 +14,4 @@ fi
 
 objects="$(get-changed-objects ${flags[@]})"
 
-echo ::set-output name=objects::$objects
+echo "::set-output name=objects::${objects// /,}"
