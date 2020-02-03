@@ -1,0 +1,21 @@
+name: 'changed-objects'
+description: 'Get changed objects'
+inputs:
+  added:
+    description: 'Get added objects'
+    required: false
+    default: 'true'
+  deleted:
+    description: 'Get deleted objects'
+    required: false
+    default: 'false'
+  modified:
+    description: 'Get modified objects'
+    required: false
+    default: 'true'
+outputs:
+  objects:
+    description: 'Changed objects'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
