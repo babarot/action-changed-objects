@@ -12,6 +12,10 @@ if ${INPUT_MODIFIED:-false}; then
   flags+=("--filter=modified")
 fi
 
+if ${INPUT_DIRNAME:-false}; then
+  flags+=("--dirname")
+fi
+
 objects=( $(changed-objects "${flags[@]}") )
 
 echo "[INFO] get change objects: ${objects[@]}"
