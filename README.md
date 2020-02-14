@@ -36,7 +36,7 @@ jobs:
         deleted: 'false'
         modified: 'true'
       env:
-        CLI_LOG: 'trace'
+        LOG: 'trace'
       id: objects
     - name: Show the previous result
       run: |
@@ -70,7 +70,7 @@ The following are as `step.env` keys
 
 | Name | Description |
 | ---- | ----------- |
-| `CLI_LOG`  | Log with each level (`TRACE`, `DEBUG`, `INFO`, `WARN` and `ERROR`) |
+| `LOG`  | Log with each level (`TRACE`, `DEBUG`, `INFO`, `WARN` and `ERROR`) |
 
 ## Versus
 
