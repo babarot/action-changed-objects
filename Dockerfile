@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Install b4b4r07/changed-objects
 RUN wget -O /tmp/changed-objects-${VERSION}-linux-amd64.tar.gz \
-    https://github.com/b4b4r07/changed-objects/releases/download/${VERSION}/changed-objects-linux-amd64.tar.gz \
+    https://github.com/b4b4r07/changed-objects/releases/download/${VERSION}/changed-objects-linux-arm64.tar.gz \
     && cd /tmp \
     && tar -zxvf changed-objects-${VERSION}-linux-amd64.tar.gz \
     && mv changed-objects /usr/local/bin/ \
