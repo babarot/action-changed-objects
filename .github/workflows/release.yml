@@ -64,6 +64,7 @@ jobs:
 
       - name: Release
         uses: actions/create-release@v1
+        if: ${{ steps.bump-semver.outputs.new_version != null }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
