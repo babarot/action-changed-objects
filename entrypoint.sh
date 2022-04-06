@@ -22,14 +22,12 @@ if [[ -n ${INPUT_OUTPUT} ]]; then
   flags+=("--output=${INPUT_OUTPUT}")
 fi
 
-error=false
-objects=( $(changed-objects "${flags[@]}" || error=true) )
-
-if ${error}; then
+changed=$(changed-objects "${flags[@]}")
+if [[ $? != 0 ]]; then
   echo "[ERROR] failed to get changed objects" >&2
   exit 1
 fi
 
-echo "[INFO] get change objects: ${objects[@]}"
+echo "[INFO] get change objects: ${changed}"
 
-echo "::set-output name=changed::${objects[@]}"
+echo "::set-output name=changed::${changed}"
