@@ -18,6 +18,10 @@ if ${INPUT_DIRNAME:-false}; then
   flags+=("--dirname")
 fi
 
+if [[ -n ${INPUT_OUTPUT} ]]; then
+  flags+=("--output=${INPUT_OUTPUT}")
+fi
+
 error=false
 objects=( $(changed-objects "${flags[@]}" || error=true) )
 
