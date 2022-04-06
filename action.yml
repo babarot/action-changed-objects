@@ -17,6 +17,10 @@ inputs:
     description: 'Return the result with each directory name'
     required: false
     default: 'false'
+  output:
+    description: 'Set output format'
+    required: false
+    default: ''
 outputs:
   changed:
     description: 'Changed objects'
