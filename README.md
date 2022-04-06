@@ -55,6 +55,7 @@ The following are optional as `step.with` keys
 | `deleted`  | Boolean | Filter deleted objects  | false   |
 | `modified` | Boolean | Filter modified objects | false   |
 | `dirname`  | Boolean | Return the result with each directory name | false   |
+| `output`   | String  | Set output format (json,"") | "" |
 
 ### outputs
 
