@@ -56,6 +56,7 @@ The following are optional as `step.with` keys
 | `modified` | Boolean | Filter modified objects | false   |
 | `dirname`  | Boolean | Return the result with each directory name | false   |
 | `output`   | String  | Set output format (json,"") | "" |
+| `default-branch`   | String  | Set default branch | "main" |
 
 ### outputs
 

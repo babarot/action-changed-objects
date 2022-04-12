@@ -21,6 +21,10 @@ inputs:
     description: 'Set output format'
     required: false
     default: ''
+  default-branch:
+    description: 'Set default branch'
+    required: false
+    default: 'main'
 outputs:
   changed:
     description: 'Changed objects'
