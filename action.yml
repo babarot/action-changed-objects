@@ -21,11 +21,11 @@ inputs:
     description: 'Set output format'
     required: false
     default: ''
-  default-branch:
+  default_branch:
     description: 'Set default branch'
     required: false
     default: 'main'
-  target-dirs:
+  target_dirs:
     description: 'Specify directories to pass changed-objects command'
     required: false
     default: ''
