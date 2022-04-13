@@ -56,8 +56,8 @@ The following are optional as `step.with` keys
 | `modified` | Boolean | Filter modified objects | false   |
 | `dirname`  | Boolean | Return the result with each directory name | false   |
 | `output`   | String  | Set output format (json,"") | "" |
-| `default-branch`   | String  | Set default branch | "main" |
-| `target-dirs` | []String | Specify directories to pass changed-objects command (space-divided) | "" |
+| `branch`   | String  | Set default branch | "main" |
+| `directories` | String | Specify directories to pass changed-objects command (space-divided) | "" |
 
 ### outputs
 

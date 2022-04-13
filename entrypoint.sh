@@ -22,12 +22,12 @@ if [[ -n ${INPUT_OUTPUT} ]]; then
   flags+=("--output=${INPUT_OUTPUT}")
 fi
 
-if [[ -n ${INPUT_DEFAULT_BRANCH} ]]; then
-  flags+=("--default-branch=${INPUT_DEFAULT_BRANCH}")
+if [[ -n ${INPUT_BRANCH} ]]; then
+  flags+=("--default-branch=${INPUT_BRANCH}")
 fi
 
-if [[ -n ${INPUT_TARGET_DIRS} ]]; then
-  args+=(${INPUT_TARGET_DIRS})
+if [[ -n ${INPUT_DIRECTORIES} ]]; then
+  args+=(${INPUT_DIRECTORIES})
 fi
 
 changed=$(changed-objects ${flags[@]} ${args[@]})
