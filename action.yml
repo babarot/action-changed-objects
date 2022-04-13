@@ -25,6 +25,10 @@ inputs:
     description: 'Set default branch'
     required: false
     default: 'main'
+  target-dirs:
+    description: 'Specify directories to pass changed-objects command'
+    required: false
+    default: ''
 outputs:
   changed:
     description: 'Changed objects'
