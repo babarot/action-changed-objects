@@ -26,7 +26,11 @@ if [[ -n ${INPUT_DEFAULT_BRANCH} ]]; then
   flags+=("--default-branch=${INPUT_DEFAULT_BRANCH}")
 fi
 
-changed=$(changed-objects "${flags[@]}")
+if [[ -n ${INPUT_TARGET_DIRS} ]]; then
+  args+=(${INPUT_TARGET_DIRS})
+fi
+
+changed=$(changed-objects ${flags[@]} ${args[@]})
 if [[ $? != 0 ]]; then
   echo "[ERROR] failed to get changed objects" >&2
   exit 1
