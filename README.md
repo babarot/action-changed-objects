@@ -57,6 +57,7 @@ The following are optional as `step.with` keys
 | `dirname`  | Boolean | Return the result with each directory name | false   |
 | `output`   | String  | Set output format (json,"") | "" |
 | `branch`   | String  | Set default branch | "main" |
+| `base`     | String  | Set [merge-base](https://git-scm.com/docs/git-merge-base) revision name | "" |
 | `directories` | String | Specify directories to pass changed-objects command (space-divided) | "" |
 
 ### outputs

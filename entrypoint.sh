@@ -26,6 +26,10 @@ if [[ -n ${INPUT_BRANCH} ]]; then
   flags+=("--default-branch=${INPUT_BRANCH}")
 fi
 
+if [[ -n ${INPUT_BASE} ]]; then
+  flags+=("--merge-base=${INPUT_BASE}")
+fi
+
 if [[ -n ${INPUT_DIRECTORIES} ]]; then
   args+=(${INPUT_DIRECTORIES})
 fi

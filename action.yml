@@ -25,6 +25,9 @@ inputs:
     description: 'Set default branch'
     required: false
     default: 'main'
+  base:
+    description: 'Set merge-base revision name'
+    required: false
   directories:
     description: 'Specify directories to pass changed-objects command'
     required: false

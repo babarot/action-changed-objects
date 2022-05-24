@@ -1,6 +1,6 @@
 FROM golang:1.13.7-stretch
 
-ENV VERSION=v0.1.12
+ENV VERSION=v0.1.13
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         ca-certificates \
