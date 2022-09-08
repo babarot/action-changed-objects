@@ -18,6 +18,14 @@ if ${INPUT_DIRNAME:-false}; then
   flags+=("--dirname")
 fi
 
+if ${INPUT_DIR_EXIST:-false}; then
+  flags+=("--dir-exist")
+fi
+
+if ${INPUT_DIR_NOT_EXIST:-false}; then
+  flags+=("--dir-not-exist")
+fi
+
 if [[ -n ${INPUT_OUTPUT} ]]; then
   flags+=("--output=${INPUT_OUTPUT}")
 fi
