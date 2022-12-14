@@ -39,7 +39,7 @@ if [[ -n ${INPUT_BASE} ]]; then
 fi
 
 if [[ -n ${INPUT_IGNORE} ]]; then
-  ignores=( "${INPUT_IGNORE//\n/ }" )
+  ignores=( "${INPUT_IGNORE//$'\n'/ }" )
   for ig in ${ignores[@]}
   do
     flags+=("--ignore=${ig}")
