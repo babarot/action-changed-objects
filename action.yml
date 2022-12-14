@@ -40,6 +40,10 @@ inputs:
     description: 'Specify directories to pass changed-objects command'
     required: false
     default: ''
+  ignore:
+    description: 'A newline separated list of ignored cases'
+    required: false
+    default: ''
 outputs:
   changed:
     description: 'Changed objects'

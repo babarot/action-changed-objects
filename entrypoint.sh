@@ -38,6 +38,14 @@ if [[ -n ${INPUT_BASE} ]]; then
   flags+=("--merge-base=${INPUT_BASE}")
 fi
 
+if [[ -n ${INPUT_IGNORE} ]]; then
+  ignores=( "${INPUT_IGNORE//\n/ }" )
+  for ig in ${ignores[@]}
+  do
+    flags+=("--ignore=${ig}")
+  done
+fi
+
 if [[ -n ${INPUT_DIRECTORIES} ]]; then
   args+=(${INPUT_DIRECTORIES})
 fi

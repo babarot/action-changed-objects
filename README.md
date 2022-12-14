@@ -59,6 +59,7 @@ The following are optional as `step.with` keys
 | `branch`   | String  | Set default branch | "main" |
 | `base`     | String  | Set [merge-base](https://git-scm.com/docs/git-merge-base) revision name | "" |
 | `directories` | String | Specify directories to pass changed-objects command (space-divided) | "" |
+| `ignore` | String | A newline separated list of ignored cases | "" |
 
 ### outputs
 
