@@ -3,39 +3,31 @@
 export CLI_LOG=${INPUT_LOG}
 
 if ${INPUT_ADDED:-false}; then
-  flags+=("--filter=added")
+  flags+=("--type=added")
 fi
 
 if ${INPUT_DELETED:-false}; then
-  flags+=("--filter=deleted")
+  flags+=("--type=deleted")
 fi
 
 if ${INPUT_MODIFIED:-false}; then
-  flags+=("--filter=modified")
+  flags+=("--type=modified")
 fi
 
-if ${INPUT_DIRNAME:-false}; then
-  flags+=("--dirname")
+if [[ -n ${INPUT_DEFAULT_BRANCH} ]]; then
+  flags+=("--default-branch=${INPUT_DEFAULT_BRANCH}")
 fi
 
-if ${INPUT_DIR_EXIST:-false}; then
-  flags+=("--dir-exist")
+if [[ -n ${INPUT_MERGE_BASE} ]]; then
+  flags+=("--merge-base=${INPUT_MERGE_BASE}")
 fi
 
-if ${INPUT_DIR_NOT_EXIST:-false}; then
-  flags+=("--dir-not-exist")
+if [[ -n ${INPUT_GROUP_BY} ]]; then
+  flags+=("--group-by=${INPUT_GROUP_BY}")
 fi
 
-if [[ -n ${INPUT_OUTPUT} ]]; then
-  flags+=("--output=${INPUT_OUTPUT}")
-fi
-
-if [[ -n ${INPUT_BRANCH} ]]; then
-  flags+=("--default-branch=${INPUT_BRANCH}")
-fi
-
-if [[ -n ${INPUT_BASE} ]]; then
-  flags+=("--merge-base=${INPUT_BASE}")
+if [[ -n ${INPUT_DIR_EXIST} ]]; then
+  flags+=("--dir-exist=${INPUT_DIR_EXIST}")
 fi
 
 if [[ -n ${INPUT_IGNORE} ]]; then
@@ -58,4 +50,5 @@ fi
 
 echo "[INFO] get change objects: ${changed}"
 
-echo "::set-output name=changed::${changed}"
+# https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+echo "changed::${changed}" >> ${GITHUB_OUTPUT}

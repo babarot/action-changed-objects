@@ -54,12 +54,12 @@ The following are optional as `step.with` keys
 | `added`    | Boolean | Filter added objects    | false   |
 | `deleted`  | Boolean | Filter deleted objects  | false   |
 | `modified` | Boolean | Filter modified objects | false   |
-| `dirname`  | Boolean | Return the result with each directory name | false   |
-| `output`   | String  | Set output format (json,"") | "" |
-| `branch`   | String  | Set default branch | "main" |
-| `base`     | String  | Set [merge-base](https://git-scm.com/docs/git-merge-base) revision name | "" |
-| `directories` | String | Specify directories to pass changed-objects command (space-divided) | "" |
+| `default_branch`   | String  | Set default branch | "main" |
+| `merge_base`     | String  | Set [merge-base](https://git-scm.com/docs/git-merge-base) revision | "" |
 | `ignore` | String | A newline separated list of ignored cases | "" |
+| `group_by` | String | A pattern to make changed objects into one group | "" |
+| `dir_exist` | String | Filter by the state of dir existing ("true", "false" or "all") | "all" |
+| `directories` | String | Specify directories to pass changed-objects command (space-divided) | "" |
 
 ### outputs
 
