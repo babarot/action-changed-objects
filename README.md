@@ -55,10 +55,10 @@ The following are optional as `step.with` keys
 | `deleted`  | Boolean | Filter deleted objects  | false   |
 | `modified` | Boolean | Filter modified objects | false   |
 | `default_branch`   | String  | Set default branch | "main" |
-| `merge_base`     | String  | Set [merge-base](https://git-scm.com/docs/git-merge-base) revision name | "" |
+| `merge_base`     | String  | Set [merge-base](https://git-scm.com/docs/git-merge-base) revision | "" |
 | `ignore` | String | A newline separated list of ignored cases | "" |
-| `group_by` | String | | "" |
-| `dir_exist` | String | ("true", "false" or "all") | "all" |
+| `group_by` | String | A pattern to make changed objects into one group | "" |
+| `dir_exist` | String | Filter by the state of dir existing ("true", "false" or "all") | "all" |
 | `directories` | String | Specify directories to pass changed-objects command (space-divided) | "" |
 
 ### outputs
