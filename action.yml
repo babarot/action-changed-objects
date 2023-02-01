@@ -25,9 +25,6 @@ inputs:
     description: 'A newline separated list of ignored cases'
     required: false
     default: ''
-    description: 'A newline separated list of ignored cases'
-    required: false
-    default: ''
   group_by:
     description: 'Show changed objects by given directory unit'
     required: false
