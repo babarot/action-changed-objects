@@ -13,35 +13,31 @@ inputs:
     description: 'Show modified objects'
     required: false
     default: 'false'
-  dirname:
-    description: 'Return the result with each directory name'
-    required: false
-    default: 'false'
-  dir_exist:
-    description: 'Return changed objects if parent dir exists'
-    required: false
-    default: 'false'
-  dir_not_exist:
-    description: 'Return changed objects if parent dir does not exist'
-    required: false
-    default: 'false'
-  output:
-    description: 'Set output format'
-    required: false
-    default: ''
-  branch:
+  deafult_branch:
     description: 'Set default branch'
     required: false
     default: 'main'
-  base:
+  merge_base:
     description: 'Set merge-base revision name'
-    required: false
-  directories:
-    description: 'Specify directories to pass changed-objects command'
     required: false
     default: ''
   ignore:
     description: 'A newline separated list of ignored cases'
+    required: false
+    default: ''
+    description: 'A newline separated list of ignored cases'
+    required: false
+    default: ''
+  group_by:
+    description: 'Show changed objects by given directory unit'
+    required: false
+    default: ''
+  dir_exist:
+    description: 'Filter objects by state of dir existing'
+    required: false
+    default: 'all'
+  directories:
+    description: 'Specify directories to pass changed-objects command'
     required: false
     default: ''
 outputs:
