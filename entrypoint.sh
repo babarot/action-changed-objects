@@ -42,7 +42,7 @@ if [[ -n ${INPUT_DIRECTORIES} ]]; then
   args+=(${INPUT_DIRECTORIES})
 fi
 
-changed=$(changed-objects ${flags[@]} ${args[@]})
+changed="$(changed-objects ${flags[@]} ${args[@]})"
 if [[ $? != 0 ]]; then
   echo "[ERROR] failed to get changed objects" >&2
   exit 1
