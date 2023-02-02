@@ -51,4 +51,4 @@ fi
 echo "[INFO] get change objects: ${changed}"
 
 # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
-echo "changed::${changed}" >> ${GITHUB_OUTPUT}
+echo "changed=${changed}" >> ${GITHUB_OUTPUT}
