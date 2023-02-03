@@ -13,7 +13,7 @@ inputs:
     description: 'Show modified objects'
     required: false
     default: 'false'
-  deafult_branch:
+  default_branch:
     description: 'Set default branch'
     required: false
     default: 'main'
