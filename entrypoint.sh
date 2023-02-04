@@ -42,13 +42,21 @@ if [[ -n ${INPUT_DIRECTORIES} ]]; then
   args+=(${INPUT_DIRECTORIES})
 fi
 
-changed="$(changed-objects ${flags[@]} ${args[@]})"
+changes="$(changed-objects ${flags[@]} ${args[@]})"
 if [[ $? != 0 ]]; then
   echo "[ERROR] failed to get changed objects" >&2
   exit 1
 fi
 
-echo "[INFO] get change objects: ${changed}"
+number_of_changes=$(echo "${changes}" | jq -r '.files | length')
+if [[ ${number_of_changes} == 0 ]]; then
+  nothing=true
+else
+  nothing=false
+fi
 
-# https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
-echo "changed=${changed}" >> ${GITHUB_OUTPUT}
+echo "[INFO] get changed objects: ${changes}"
+echo "changes=${changes}" >> ${GITHUB_OUTPUT}
+
+echo "[INFO] get number of changed objects: ${number_of_changes}"
+echo "nothing=${nothing}" >> ${GITHUB_OUTPUT}
