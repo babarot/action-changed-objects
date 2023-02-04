@@ -40,8 +40,6 @@ inputs:
 outputs:
   changes:
     description: 'Changed objects'
-  nothing:
-    description: 'True if no changes returned'
 runs:
   using: 'docker'
   image: 'Dockerfile'
