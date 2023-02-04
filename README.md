@@ -40,7 +40,7 @@ jobs:
       id: objects
     - name: Show the previous result
       run: |
-        echo ${{ steps.objects.outputs.changed }}
+        echo ${{ steps.objects.outputs.changes }}
 ```
 
 ## Customizing
@@ -67,7 +67,8 @@ The following outputs can be accessed via `${{ steps.<step-id>.outputs }}` from 
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| changed  | String  | Changed objects compared with current branch and origin/master. It may be separated by a space |
+| changes  | String  | Changed objects compared with current branch and origin/master. It may be separated by a space |
+| nothing  | Boolean  | Return true if no changed objects |
 
 ### environment variables
 
