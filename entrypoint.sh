@@ -23,7 +23,11 @@ if [[ -n ${INPUT_MERGE_BASE} ]]; then
 fi
 
 if [[ -n ${INPUT_GROUP_BY} ]]; then
-  flags+=("--group-by=${INPUT_GROUP_BY}")
+  group_by=( "${INPUT_GROUP_BY//$'\n'/ }" )
+  for gb in ${group_by[@]}
+  do
+    flags+=("--group-by=${gb}")
+  done
 fi
 
 if [[ -n ${INPUT_DIR_EXIST} ]]; then
