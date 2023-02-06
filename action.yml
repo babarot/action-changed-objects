@@ -26,7 +26,7 @@ inputs:
     required: false
     default: ''
   group_by:
-    description: 'Show changed objects by given directory unit'
+    description: 'A newline separated list of grouping directory unit'
     required: false
     default: ''
   dir_exist:
