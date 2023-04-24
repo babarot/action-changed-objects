@@ -1,4 +1,4 @@
-FROM golang:1.20-alpine3.17
+FROM golang:1.18-stretch
 
 ENV VERSION=v0.3.5
 
