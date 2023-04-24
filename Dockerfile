@@ -1,4 +1,4 @@
-FROM golang:1.18-stretch
+FROM golang:1.20.3-bullseye
 
 ENV VERSION=v0.3.5
 
