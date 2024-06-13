@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# do not expand glob to use doublestar(Go package)
+set -o noglob
+
 export CLI_LOG=${INPUT_LOG}
 
 if ${INPUT_ADDED:-false}; then
