@@ -24,7 +24,7 @@ fi
 
 if [[ -n ${INPUT_GROUP_BY} ]]; then
   group_by=( "${INPUT_GROUP_BY//$'\n'/ }" )
-  for gb in ${group_by[@]}
+  for gb in "${group_by[@]}"
   do
     flags+=("--group-by=${gb}")
   done
@@ -36,7 +36,7 @@ fi
 
 if [[ -n ${INPUT_IGNORE} ]]; then
   ignores=( "${INPUT_IGNORE//$'\n'/ }" )
-  for ig in ${ignores[@]}
+  for ig in "${ignores[@]}"
   do
     flags+=("--ignore=${ig}")
   done
@@ -46,8 +46,8 @@ if [[ -n ${INPUT_DIRECTORIES} ]]; then
   args+=(${INPUT_DIRECTORIES})
 fi
 
-echo "[DEBUG] full command: changed-objects ${flags[@]} ${args[@]}"
-changes="$(changed-objects ${flags[@]} ${args[@]})"
+printf "[DEBUG] full command: changed-objects %s %s" "${flags[@]}" "${args[@]}"
+changes="$(changed-objects "${flags[@]}" "${args[@]}")"
 if [[ $? != 0 ]]; then
   echo "[ERROR] failed to get changed objects" >&2
   exit 1
