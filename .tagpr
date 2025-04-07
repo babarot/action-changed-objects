@@ -42,6 +42,6 @@
 	changelog = true
 	majorLabels = release/major
 	minorLabels = release/minor
-	releaseBranch = master
+	releaseBranch = main
 	vPrefix = true
 	versionFile = VERSION

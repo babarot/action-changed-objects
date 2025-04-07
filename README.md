@@ -3,7 +3,7 @@ action-changed-objects
 
 [![](https://github.com/babarot/action-changed-objects/workflows/release/badge.svg)](https://github.com/babarot/action-changed-objects/releases)
 
-Get changed objects compared with Git commit in `origin/master`
+Get changed objects compared with Git commit in `origin/main`
 
 ![](demo.png)
 
@@ -20,7 +20,7 @@ on:
   push:
     branches:
       - '*'
-      - '!master'
+      - '!main'
 
 jobs:
   show:
@@ -30,7 +30,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     - name: Get changed objects
-      uses: babarot/action-changed-objects@master
+      uses: babarot/action-changed-objects@main
       with:
         added: 'true'
         deleted: 'false'
@@ -67,7 +67,7 @@ The following outputs can be accessed via `${{ steps.<step-id>.outputs }}` from 
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| changes  | String  | Changed objects compared with current branch and origin/master. It may be separated by a space |
+| changes  | String  | Changed objects compared with current branch and origin/main. It may be separated by a space |
 
 ### environment variables
 

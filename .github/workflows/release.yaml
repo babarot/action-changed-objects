@@ -42,8 +42,7 @@ jobs:
     outputs:
       tag: ${{ steps.run-tagpr.outputs.tag }}
 
-
-  goreleaser:
+  tag:
     if: needs.tagpr.outputs.tag != ''
     needs: tagpr
     runs-on: ubuntu-latest
@@ -56,16 +55,19 @@ jobs:
         with:
           fetch-depth: 0 # https://github.com/actions/checkout/issues/1471
           fetch-tags: true
-      - name: Setup Go
-        uses: actions/setup-go@v5
+
+      - name: Create Release Tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.1
         with:
-          go-version-file: 'go.mod'
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v6
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: steps.tag_version.outputs.new_tag != ''
         with:
-          version: '~> v2'
-          args: release --clean
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
+          name: ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAP_GITHUB_TOKEN: ${{ secrets.TAP_GITHUB_TOKEN }}
-          SCOOP_GITHUB_TOKEN: ${{ secrets.SCOOP_GITHUB_TOKEN }}
