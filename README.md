@@ -1,13 +1,13 @@
 action-changed-objects
 ======================
 
-[![](https://github.com/b4b4r07/action-changed-objects/workflows/release/badge.svg)](https://github.com/b4b4r07/action-changed-objects/releases)
+[![](https://github.com/babarot/action-changed-objects/workflows/release/badge.svg)](https://github.com/babarot/action-changed-objects/releases)
 
 Get changed objects compared with Git commit in `origin/master`
 
 ![](demo.png)
 
-This action depends on https://github.com/b4b4r07/changed-objects
+This action depends on https://github.com/babarot/changed-objects
 
 ## Usage
 
@@ -30,7 +30,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     - name: Get changed objects
-      uses: b4b4r07/action-changed-objects@master
+      uses: babarot/action-changed-objects@master
       with:
         added: 'true'
         deleted: 'false'
@@ -85,4 +85,4 @@ The following are as `step.env` keys
 
 ## License
 
-[MIT](https://b4b4r07.mit-license.org/)
+[MIT](https://babarot.mit-license.org/)
