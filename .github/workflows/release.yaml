@@ -41,33 +41,33 @@ jobs:
             Please perform a final check, and if everything looks good, proceed with the merge.
     outputs:
       tag: ${{ steps.run-tagpr.outputs.tag }}
-
-  tag:
-    if: needs.tagpr.outputs.tag != ''
-    needs: tagpr
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # https://github.com/actions/checkout/issues/1471
-          fetch-tags: true
-
-      - name: Create Release Tag
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        if: steps.tag_version.outputs.new_tag != ''
-        with:
-          tag_name: ${{ steps.tag_version.outputs.new_tag }}
-          name: ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #
+  # tag:
+  #   if: needs.tagpr.outputs.tag != ''
+  #   needs: tagpr
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 5
+  #   permissions:
+  #     contents: write
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0 # https://github.com/actions/checkout/issues/1471
+  #         fetch-tags: true
+  #
+  #     - name: Create Release Tag
+  #       id: tag_version
+  #       uses: mathieudutour/github-tag-action@v6.1
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #
+  #     - name: Create Release
+  #       uses: softprops/action-gh-release@v1
+  #       if: steps.tag_version.outputs.new_tag != ''
+  #       with:
+  #         tag_name: ${{ steps.tag_version.outputs.new_tag }}
+  #         name: ${{ steps.tag_version.outputs.new_tag }}
+  #         body: ${{ steps.tag_version.outputs.changelog }}
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
