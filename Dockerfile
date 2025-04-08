@@ -1,6 +1,6 @@
 FROM golang:1.20.3-bullseye
 
-ENV VERSION=v0.3.8
+ENV VERSION=v0.3.9
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates \
