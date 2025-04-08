@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.1.32](https://github.com/babarot/action-changed-objects/compare/v0.1.31...v0.1.32) - 2025-04-08
+
 ## [v0.1.31](https://github.com/babarot/action-changed-objects/compare/v0.1.30...v0.1.31) - 2025-04-08
 
 ## [v0.1.30](https://github.com/babarot/action-changed-objects/compare/v0.1.29...v0.1.30) - 2025-04-07
