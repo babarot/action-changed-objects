@@ -37,6 +37,10 @@ inputs:
     description: 'Specify directories to pass changed-objects command'
     required: false
     default: ''
+  root_marker:
+    description: 'A glob pattern of file that marks the root directory (e.g. *.tf). When specified, traverses parent directories to find the nearest ancestor containing a matching file.'
+    required: false
+    default: ''
 outputs:
   changes:
     description: 'Changed objects'
