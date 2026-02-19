@@ -36,6 +36,10 @@ if [[ -n ${INPUT_DIR_EXIST} ]]; then
   flags+=("--dir-exist=${INPUT_DIR_EXIST}")
 fi
 
+if [[ -n ${INPUT_ROOT_MARKER} ]]; then
+  flags+=("--root-marker=${INPUT_ROOT_MARKER}")
+fi
+
 if [[ -n ${INPUT_IGNORE} ]]; then
   for ig in ${INPUT_IGNORE//$'\n'/ }
   do
