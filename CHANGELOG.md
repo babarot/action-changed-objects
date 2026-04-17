@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.1.34](https://github.com/babarot/action-changed-objects/compare/v0.1.33...v0.1.34) - 2026-04-17
+
 ## [v0.1.33](https://github.com/babarot/action-changed-objects/compare/v0.1.32...v0.1.33) - 2026-02-19
 ### New Features
 - feat: add root_marker input to support --root-marker flag by @babarot in https://github.com/babarot/action-changed-objects/pull/35
