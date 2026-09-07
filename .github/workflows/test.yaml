@@ -1,0 +1,37 @@
+name: Test
+
+on: pull_request
+
+permissions:
+  contents: read
+
+jobs:
+  self-test:
+    name: Run this action against itself
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Get changed objects
+        id: objects
+        uses: ./
+        with:
+          added: true
+          modified: true
+          deleted: true
+          default_branch: main
+          merge_base: origin/main
+        env:
+          LOG: trace
+
+      - name: Verify the output
+        env:
+          CHANGES: ${{ steps.objects.outputs.changes }}
+        run: |
+          echo "${CHANGES}" | jq .
+          echo "${CHANGES}" | jq -e '.dirs | type == "array"'
