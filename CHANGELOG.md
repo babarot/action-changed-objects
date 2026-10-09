@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.1.36](https://github.com/babarot/action-changed-objects/compare/v0.1.35...v0.1.36) - 2026-10-09
+### Others
+- Use the shared PR labeler workflow by @babarot in https://github.com/babarot/action-changed-objects/pull/46
+
 ## [v0.1.35](https://github.com/babarot/action-changed-objects/compare/v0.1.34...v0.1.35) - 2026-09-07
 
 ## [v0.1.34](https://github.com/babarot/action-changed-objects/compare/v0.1.33...v0.1.34) - 2026-04-17
